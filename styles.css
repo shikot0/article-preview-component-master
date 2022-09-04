@@ -1,0 +1,247 @@
+* {
+    font-family: 'Manrope', 'Poppins', sans-serif; 
+    box-sizing: border-box;
+}
+body {
+    margin: 0; 
+}
+main {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(210, 46%, 95%);
+    overflow-x: hidden;
+}
+.card {
+    display: flex;
+    min-width: 40%;
+    height: 270px;
+    width: 700px;
+    background-color: white;
+    border-radius: 10px;
+    /* box-shadow: 5px 5px 16px rgb(187, 185, 185); */
+    transition: .3s;
+}
+.card:hover {
+    box-shadow: 5px 5px 16px rgb(187, 185, 185);
+    transition: .3s;
+}
+.img-section {
+    width: 45%;
+    border-radius: 10px 0px 0px 10px;
+    overflow: hidden;
+} 
+.img-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+.text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    width: 55%;
+    padding: 1.8rem;
+}
+.text-section h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+    color: hsl(217, 19%, 35%);
+}
+.text-section p{
+    color: hsl(214, 17%, 51%);
+    font-size: .8rem;
+    font-weight: 500;
+}
+.lower-section {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.user {
+    display: flex;
+    align-items: center;
+}
+.user img {
+    width: 13%;
+    height: 13%;
+    border-radius: 30px
+}
+.user div {
+    display: flex;
+    flex-direction: column;
+}
+.user h4  {
+    font-size: .8rem;
+    color: hsl(217, 19%, 35%);
+    margin: 0 0 0 9px;
+}
+.user p  {
+    margin: 0 0 0 9px;
+    font-size: .7rem;
+    color: hsl(214, 17%, 51%);
+}
+.share-button {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: hsl(210, 46%, 95%);
+    cursor: pointer;
+    transition: .2s;
+}
+.tooltip {
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 180px; */
+    left: -250%;   
+    top: -200%;
+    gap: 8%;
+    letter-spacing: 4px; 
+    padding: 0px 30px; 
+    border-radius: 10px;
+    background-color: hsl(217, 19%, 35%);
+}
+.tooltip::after {
+    content: "";
+    position: absolute; 
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: hsl(217, 19%, 35%) transparent transparent transparent;
+}
+.tooltip a {
+    display: flex;
+    align-items: center;
+}
+.tooltip p{
+    font-weight: 400;   
+}
+#icon-active { 
+    background-color: hsl(217, 19%, 35%); 
+    transition: .2s;
+}
+#icon-active .tooltip {
+    visibility: visible;
+}
+@media screen and (max-width: 750px) {
+    .card {
+        min-width: 80%;
+        height: 250px;
+        width: 600px;
+    }
+    .text-section {
+        padding: 1.3rem;
+    }
+}
+@media screen and (max-width: 620px) {
+    .card {
+        width: 80%;
+        max-width: 280px;  
+        max-height: 450px; 
+        height: 75%;   
+        flex-direction: column;
+        overflow: hidden; 
+    }
+    .img-section {
+        height: 40%;
+        width: 100%;
+        border-radius: 10px 10px 0px 0px;
+    }
+    .text-section {
+        box-sizing: border-box;
+        height: 60%;
+        width: 100%;    
+        padding: 0;
+        margin: 0 auto;
+    }
+    .text-section h3 {
+        font-size: 1rem;
+        padding: 1.5rem 1.5rem 0rem;
+        font-weight: 600;
+    }
+    .text-section > p{
+        color: hsl(214, 17%, 51%);
+        padding: 0rem 1.5rem;
+        font-size: .8rem;
+        font-weight: 500;
+        margin: 0; 
+    }
+    .user p  {
+        margin: 0px 0px 0px 9px;
+        font-size: .7rem;
+        color: hsl(214, 17%, 51%);
+    }
+    .lower-section {
+        display: flex;
+        padding: 0 1.5rem .5rem; 
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    .share-button {
+        position: static;
+        height: 30px;
+        width: 30px;
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: hsl(210, 46%, 95%);
+        cursor: pointer;
+        z-index: 15px;
+    }
+    .share-button img {
+        z-index: 15;
+    }
+    .tooltip {
+        position: absolute;
+        /* visibility: visible; */
+        visibility: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        box-sizing: border-box;
+        width: 100%; 
+        height: 105%;
+        top: 0%; 
+        left: 0%;   
+        gap: 8%;
+        letter-spacing: 4px; 
+        padding: 0px 2rem .4rem; 
+        border-radius: 0px;
+        z-index: 10; 
+        background-color: hsl(217, 19%, 35%);
+    }
+    .tooltip::after {
+        content: "";
+        position: static;
+        margin: 0;
+    }
+    .tooltip a {
+        display: flex;
+        align-items: center;
+    }
+    #icon-active { 
+        background-color: hsl(210, 46%, 95%); 
+        transition: .2s;
+    }
+    #icon-active .tooltip {
+        visibility: visible;
+    }
+}
